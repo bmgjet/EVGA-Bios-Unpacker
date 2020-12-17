@@ -7,7 +7,7 @@ namespace Romunpacker
 {
     public partial class Form1 : Form
     {
-//      EVGA Bios unpacker 0.2 by
+//      EVGA Bios unpacker 0.3 by
 //     ▄▀▀█▄▄   ▄▀▀▄ ▄▀▄  ▄▀▀▀▀▄          ▄█  ▄▀▀█▄▄▄▄  ▄▀▀▀█▀▀▄ 
 //    ▐ ▄▀   █ █  █ ▀  █ █          ▄▀▀▀█▀ ▐ ▐  ▄▀   ▐ █    █  ▐ 
 //      █▄▄▄▀  ▐  █    █ █    ▀▄▄  █    █      █▄▄▄▄▄  ▐   █     
@@ -104,9 +104,43 @@ namespace Romunpacker
                     BiosVersion[i] = file[i + address + 112];
                 }
 
+                //type 1 bios
+                int PowerTable = 564097 + address;
+                PowerTable += 8969;
+                byte[] PowerLimit = new byte[4];
+                for (int i = 0; i < 4; i++)
+                {
+                    PowerLimit[i] = file[i + PowerTable];
+                }
+                PowerTable += 8969;
+                byte[] BoostLimit = new byte[4];
+                for (int i = 0; i < 4; i++)
+                {
+                    BoostLimit[i] = file[i + PowerTable];
+                }
+                PowerTable += 4443;
+                int Speed = BitConverter.ToInt32(BoostLimit, 0) / 1000;
+                if (Speed > 2100 || Speed < 1395)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        PowerLimit[i] = file[i + PowerTable];
+                    }
+                    PowerTable -= 9042;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        BoostLimit[i] = file[i + PowerTable];
+                    }
+                   Speed = BitConverter.ToInt32(BoostLimit, 0) / 1000;
+                }
+
+                int decWat = BitConverter.ToInt32(PowerLimit, 0) / 1000;
+
                 filename = Encoding.ASCII.GetString(Biosname);
                 label1.Text = "Bios: " + filename;
                 label2.Text = "Version: " + Encoding.ASCII.GetString(BiosVersion);
+                label4.Text = "PowerLimit: " + decWat.ToString() + "W";
+                label5.Text = "Boost Clock: " + Speed.ToString() + "Mhz";
             }
             catch { }
         }
@@ -138,6 +172,8 @@ namespace Romunpacker
             listBox1.Items.Clear();
             label2.Text = "Version: ";
             label1.Text = "Bios: ";
+            label4.Text = "PowerLimit: ";
+            label5.Text = "Boost Clock: ";
             startup();
         }
     }

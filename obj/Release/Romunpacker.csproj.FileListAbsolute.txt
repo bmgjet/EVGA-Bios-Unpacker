@@ -7,4 +7,3 @@ C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.csproj.GenerateRes
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.csproj.CoreCompileInputs.cache
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.exe
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.pdb
-C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.csprojAssemblyReference.cache
