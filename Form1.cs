@@ -120,6 +120,7 @@ namespace Romunpacker
                 }
                 PowerTable += 4443;
                 int Speed = BitConverter.ToInt32(BoostLimit, 0) / 1000;
+                int decWat = BitConverter.ToInt32(PowerLimit, 0) / 1000;
                 if (Speed > 2100 || Speed < 1395)
                 {
                     for (int i = 0; i < 4; i++)
@@ -131,10 +132,11 @@ namespace Romunpacker
                     {
                         BoostLimit[i] = file[i + PowerTable];
                     }
-                   Speed = BitConverter.ToInt32(BoostLimit, 0) / 1000;
+                   Speed = BitConverter.ToInt32(PowerLimit, 0) / 1000;
+                   decWat = BitConverter.ToInt32(BoostLimit, 0) / 1000;
                 }
 
-                int decWat = BitConverter.ToInt32(PowerLimit, 0) / 1000;
+                
 
                 filename = Encoding.ASCII.GetString(Biosname);
                 label1.Text = "Bios: " + filename;
