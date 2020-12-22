@@ -1,10 +1,10 @@
 C:\Users\bmg\source\repos\Romunpacker\bin\Release\Romunpacker.exe.config
 C:\Users\bmg\source\repos\Romunpacker\bin\Release\Romunpacker.exe
 C:\Users\bmg\source\repos\Romunpacker\bin\Release\Romunpacker.pdb
+C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.csprojAssemblyReference.cache
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.Form1.resources
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.Properties.Resources.resources
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.csproj.GenerateResource.cache
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.csproj.CoreCompileInputs.cache
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.exe
 C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.pdb
-C:\Users\bmg\source\repos\Romunpacker\obj\Release\Romunpacker.csprojAssemblyReference.cache
